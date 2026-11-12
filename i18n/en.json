@@ -73,5 +73,7 @@
   "altAdventure": "Black and orange adventure motorcycle with a windscreen and a luggage rack, side view",
   "menu": "Menu",
   "wa": "WhatsApp",
-  "skip": "Skip"
+  "skip": "Skip",
+  "ignite": "Start",
+  "igniteHint": "Sound on · tap to start the engine"
 }

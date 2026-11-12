@@ -113,12 +113,17 @@ if (reduced || !('IntersectionObserver' in window)) {
 }
 
 /* ---------- Video d'apertura ----------
+   Sequenza: moto spenta nel deserto -> il visitatore tocca "Start" -> si accendono le luci, rombo del motore
+   a tutta potenza, la moto sfreccia e colpisce la camera -> lampo arancione e si apre il sito.
+   L'audio parte solo dopo un tocco (regola dei browser): per questo c'e' il pulsante d'avviamento.
    Per accenderlo: metti i file in video/ e scrivi data-intro="on" sul tag <html> in index.html.
-   File attesi: intro-9x16.mp4 (telefono, 720x1280) e intro-16x9.mp4 (computer, 1280x720), con le versioni .webm (AV1). */
+   File: intro-9x16 (telefono, 720x1280) e intro-16x9 (computer, 1280x720), ognuno in .webm (AV1+Opus),
+   .mp4 (H.264+AAC) e .webp (primo fotogramma, la moto spenta). */
 (function () {
   const box = document.getElementById('intro');
   if (!root.classList.contains('intro-on') || !box) return;
   const v = box.querySelector('video');
+  const start = box.querySelector('.intro-start');
   const IMPACT = 0.35;   // secondi prima della fine in cui parte il lampo dell'impatto
   let done = false;
 
@@ -128,22 +133,31 @@ if (reduced || !('IntersectionObserver' in window)) {
     try { sessionStorage.setItem('introSeen', '1'); } catch {}
     if (impact) box.classList.add('hit');
     box.classList.add('out');
-    setTimeout(() => { root.classList.remove('intro-on'); box.remove(); }, impact ? 950 : 600);
+    // l'audio sfuma invece di tagliarsi di colpo
+    const fade = setInterval(() => { v.volume = Math.max(0, v.volume - 0.1); if (!v.volume) clearInterval(fade); }, 60);
+    setTimeout(() => { v.pause(); root.classList.remove('intro-on'); box.remove(); }, impact ? 1100 : 600);
   }
 
-  const portrait = innerHeight > innerWidth;
-  const name = portrait ? 'video/intro-9x16' : 'video/intro-16x9';
+  const name = innerHeight > innerWidth ? 'video/intro-9x16' : 'video/intro-16x9';
   v.poster = name + '.webp';
-  v.innerHTML = `<source src="${name}.webm" type='video/webm; codecs="av01.0.05M.08"'><source src="${name}.mp4" type="video/mp4">`;
+  v.innerHTML = `<source src="${name}.webm" type='video/webm; codecs="av01.0.05M.08, opus"'><source src="${name}.mp4" type="video/mp4">`;
+  v.preload = 'auto';   // scarica mentre il visitatore guarda la moto spenta
   v.load();
+  setTimeout(() => start.focus({ preventScroll: true }), 300);
+
+  start.addEventListener('click', () => {
+    box.classList.add('go');
+    v.muted = false;
+    if (navigator.vibrate) navigator.vibrate([40, 40, 120]);   // piccola vibrazione d'avviamento sui telefoni Android
+    const p = v.play();
+    if (p) p.catch(() => { v.muted = true; v.play().catch(() => reveal(false)); });
+    // rete lenta: se dopo 4 s dal tocco il video non e' partito, si apre il sito
+    setTimeout(() => { if (v.currentTime === 0) reveal(false); }, 4000);
+  });
 
   v.addEventListener('timeupdate', () => { if (v.duration && v.duration - v.currentTime < IMPACT) reveal(true); });
   v.addEventListener('ended', () => reveal(true));
   v.addEventListener('error', () => reveal(false), true);
   box.querySelector('.intro-skip').addEventListener('click', () => reveal(false));
-  addEventListener('keydown', e => { if (e.key === 'Escape') reveal(false); }, { once: true });
-  const p = v.play();
-  if (p) p.catch(() => reveal(false));
-  // Rete lenta: se dopo 2,5 s il video non e' partito, si apre direttamente il sito
-  setTimeout(() => { if (v.currentTime === 0) reveal(false); }, 2500);
+  addEventListener('keydown', e => { if (e.key === 'Escape') reveal(false); });
 })();

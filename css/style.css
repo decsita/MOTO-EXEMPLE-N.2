@@ -27,8 +27,17 @@ img{max-width:100%}
 .intro-on .intro{display:block;position:fixed;inset:0;z-index:100;background:#000;overflow:hidden}
 .intro-on body{overflow:hidden}
 .intro-on .hero *{animation-play-state:paused!important}
-.intro-v{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.intro-v{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000}
 .intro-flash{position:absolute;inset:0;pointer-events:none;opacity:0;background:radial-gradient(circle at 50% 55%,#fff 0,#ffd2b8 18%,var(--or) 45%,rgba(255,95,31,0) 75%)}
+.intro-gate{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:18px;padding:0 24px calc(18vh + env(safe-area-inset-bottom));background:linear-gradient(to top,rgba(0,0,0,.75),transparent 55%);transition:opacity .5s}
+.intro.go .intro-gate{opacity:0;pointer-events:none}
+/* pulsante d'avviamento: tondo, anello luminoso che pulsa */
+.intro-start{position:relative;width:104px;height:104px;border-radius:50%;border:0;cursor:pointer;background:radial-gradient(circle at 50% 35%,#2a2a2e,#0a0a0b 70%);box-shadow:inset 0 2px 0 rgba(255,255,255,.12),0 10px 30px rgba(0,0,0,.7);color:#fff;transition:transform .2s}
+.intro-start:active{transform:scale(.94)}
+.is-ring{position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--or);box-shadow:0 0 22px var(--glow),inset 0 0 14px var(--glow);animation:ignite 1.8s ease-in-out infinite}
+.is-t{position:relative;font:800 15px/1 var(--fb);letter-spacing:.2em;text-transform:uppercase;padding-left:.2em}
+.intro-hint{margin:0;color:rgba(255,255,255,.75);font:600 13px/1.4 var(--fb);letter-spacing:.06em;text-align:center}
+@keyframes ignite{50%{box-shadow:0 0 40px rgba(255,95,31,.8),inset 0 0 20px var(--glow);transform:scale(1.04)}}
 .intro-skip{position:absolute;right:20px;bottom:calc(20px + env(safe-area-inset-bottom));min-height:44px;padding:0 20px;border-radius:99px;border:1px solid rgba(255,255,255,.4);background:rgba(0,0,0,.45);color:#fff;font:800 12px/1 var(--fb);letter-spacing:.16em;text-transform:uppercase;cursor:pointer;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
 /* impatto: lampo arancione, il video si avvicina e sparisce, sotto c'e' gia' il sito */
 .intro.hit .intro-flash{animation:hitFlash .7s ease-out forwards}
