@@ -6,9 +6,11 @@
 <title>Coastline Moto Watamu · Demo DEC’S</title>
 <meta name="description" content="Demo DEC’S: sito di esempio per un concessionario moto a Watamu. Contenuti di esempio.">
 <meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0a0a0b">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/unbounded.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/hero-trail-800.webp" as="image" imagesrcset="img/hero-trail-800.webp 800w, img/hero-trail-1280.webp 1280w" imagesizes="(max-width:760px) 100vw, 58vw" fetchpriority="high">
 <link rel="stylesheet" href="css/style.css">
 <script>
 /* Lingua prima del primo disegno: ?lang= nell'indirizzo, poi quella salvata, poi inglese */
@@ -27,13 +29,13 @@
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-wa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.6-5.2A8.5 8.5 0 1 1 21 11.5z"></path><path d="M9 9.5c.3 2.4 2.1 4.2 4.5 4.6"></path></symbol></svg>
 
-<header class="hdr light">
+<header class="hdr">
 <div class="wrap hdr-in">
 <a href="#top" class="logo" aria-label="Coastline Moto Watamu, home">
 <svg class="logo-m" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M23.4 8.6A10.5 10.5 0 1 0 23.4 23.4" fill="none" stroke="#ff5f1f" stroke-width="7"/><path d="M23.4 8.6A10.5 10.5 0 1 0 23.4 23.4" fill="none" stroke="#0a0a0b" stroke-width="1.6" stroke-dasharray="4.2 3.4"/><circle cx="27.6" cy="16" r="2.8" fill="#ff5f1f"/></svg>
 <span class="logo-w">Coastline</span>
 </a>
-<nav class="nav" aria-label="Main">
+<nav class="nav" id="nav" aria-label="Main">
 <a href="#models"><span data-i18n="navModels">Lineup</span></a>
 <a href="#pay"><span data-i18n="navPay">Payments</span></a>
 <a href="#service"><span data-i18n="navService">Service</span></a>
@@ -43,82 +45,69 @@
 <button type="button" class="on" aria-pressed="true" data-lang="en">EN</button>
 <button type="button" aria-pressed="false" data-lang="sw">SW</button>
 </div>
+<button type="button" class="menu-btn" aria-expanded="false" aria-controls="nav" data-i18n-label="menu" aria-label="Menu"><span></span><span></span></button>
 </div>
 </header>
 
 <main>
-<section class="hero dark" id="top">
+<section class="hero" id="top">
 <div class="hero-bg" aria-hidden="true">
-<span class="ghost g1">250</span>
-<span class="ghost g2">WATAMU</span>
+<div class="floor"><div class="floor-grid"></div></div>
+<span class="ghost">DUNE</span>
+<span class="glow"></span>
 </div>
-<div class="wrap">
-<p class="eyebrow cond rv" data-i18n="eyebrow">New season · Watamu</p>
-<h1 class="h1 disp rv d1"><span data-i18n="h1a">Twende.</span><span class="or" data-i18n="h1b">The road is calling.</span></h1>
+<div class="wrap hero-in">
+<p class="eyebrow rv" data-i18n="eyebrow">New season · Watamu</p>
+<h1 class="h1 disp"><span class="ln"><span data-i18n="h1a">Twende.</span></span><span class="ln sub"><span class="or" data-i18n="h1b">The road is calling.</span></span></h1>
 <div class="hero-grid">
 <div class="hero-copy">
 <p class="lead mute rv d2" data-i18n="lead">Bikes, parts and service for Watamu, Gede and Kilifi. Book your test ride on WhatsApp.</p>
 <div class="ctas rv d3">
-<a class="btn-wa pulse" href="https://wa.me/254700000000" data-wa="waHello" data-wa-model="Dune 250 Trail" target="_blank" rel="noopener"><svg width="20" height="20" aria-hidden="true"><use href="#i-wa"></use></svg><span data-i18n="ask">Ask on WhatsApp</span></a>
+<a class="btn-wa" href="https://wa.me/254700000000" data-wa="waHello" data-wa-model="Dune 250 Trail" target="_blank" rel="noopener"><svg class="wa-ic" width="20" height="20" aria-hidden="true"><use href="#i-wa"></use></svg><span data-i18n="ask">Ask on WhatsApp</span></a>
 <a class="btn-line" href="#models" data-i18n="see">View the lineup</a>
-</div>
-<div class="hero-model rv d4">
-<span class="cond mute">Dune 250 Trail</span>
-<span class="disp"><span class="cond or" style="font-size:13px;margin-right:8px"><span data-i18n="from">From</span> KES</span>398,000</span>
 </div>
 </div>
 <div class="hero-bike">
-<svg class="hud" viewBox="0 0 600 340" aria-hidden="true">
-<line class="gline" x1="0" y1="336" x2="600" y2="336" stroke="rgba(255,255,255,.35)" stroke-width="1.5"></line>
-</svg>
 <div class="bike-wrap">
 <img class="bike-img" src="img/hero-trail-800.webp" srcset="img/hero-trail-800.webp 800w, img/hero-trail-1280.webp 1280w" sizes="(max-width:760px) 100vw, 58vw" fetchpriority="high" alt="Orange and white Dune 250 Trail motorcycle with knobby tyres, side view" data-i18n-alt="altHero" width="800" height="514" decoding="async">
 <span class="shine" aria-hidden="true"></span>
 </div>
+<div class="hero-model rv d4">
+<span class="tagline">Dune 250 Trail</span>
+<span class="hm-price"><small><span data-i18n="from">From</span> KES</small>398,000</span>
 </div>
 </div>
 </div>
-<a href="#specs" class="scroll cond"><span data-i18n="scroll">Scroll</span><span class="sl" aria-hidden="true"></span></a>
+</div>
 </section>
 
 <section class="specs" id="specs" aria-label="Dune 250 Trail specifications">
 <div class="wrap">
 <div class="spec-grid">
-<div class="spec rv">
-<p class="spec-v"><span class="num" data-count="249">249</span><span class="unit">CC</span></p>
-<p class="spec-l" data-i18n="specEngineL">Engine</p>
-</div>
-<div class="spec rv d1">
-<p class="spec-v"><span class="num" data-count="24">24</span><span class="unit">HP</span></p>
-<p class="spec-l" data-i18n="specPowerL">Power</p>
-</div>
-<div class="spec rv d2">
-<p class="spec-v"><span class="num" data-count="6">6</span><span class="unit" data-i18n="specGearsU">GEARS</span></p>
-<p class="spec-l" data-i18n="specGearsL">Gearbox</p>
-</div>
-<div class="spec rv d3">
-<p class="spec-v"><span class="num" data-count="32">32</span><span class="unit">KM/L</span></p>
-<p class="spec-l" data-i18n="specFuelL">Fuel use</p>
-</div>
+<div class="spec rv"><p class="spec-v"><span class="num" data-count="249">249</span><span class="unit">CC</span></p><p class="spec-l" data-i18n="specEngineL">Engine</p></div>
+<div class="spec rv d1"><p class="spec-v"><span class="num" data-count="24">24</span><span class="unit">HP</span></p><p class="spec-l" data-i18n="specPowerL">Power</p></div>
+<div class="spec rv d2"><p class="spec-v"><span class="num" data-count="6">6</span><span class="unit" data-i18n="specGearsU">GEARS</span></p><p class="spec-l" data-i18n="specGearsL">Gearbox</p></div>
+<div class="spec rv d3"><p class="spec-v"><span class="num" data-count="32">32</span><span class="unit">KM/L</span></p><p class="spec-l" data-i18n="specFuelL">Fuel use</p></div>
 </div>
 </div>
 </section>
 
-<section class="sec light" id="models">
+<div class="marquee" aria-hidden="true"><div class="mq-track"><div class="mq-set"><span>Twende</span><i aria-hidden="true"></i><span>Watamu</span><i aria-hidden="true"></i><span>Gede</span><i aria-hidden="true"></i><span>Kilifi</span><i aria-hidden="true"></i><span>M-Pesa</span><i aria-hidden="true"></i><span>Test ride</span><i aria-hidden="true"></i><span>Service</span><i aria-hidden="true"></i></div><div class="mq-set"><span>Twende</span><i aria-hidden="true"></i><span>Watamu</span><i aria-hidden="true"></i><span>Gede</span><i aria-hidden="true"></i><span>Kilifi</span><i aria-hidden="true"></i><span>M-Pesa</span><i aria-hidden="true"></i><span>Test ride</span><i aria-hidden="true"></i><span>Service</span><i aria-hidden="true"></i></div></div></div>
+
+<section class="sec" id="models">
 <div class="wrap">
 <div class="sec-head">
 <div>
-<p class="kicker cond rv" data-i18n="modelsK">The lineup</p>
+<p class="kicker rv" data-i18n="modelsK">The lineup</p>
 <h2 class="h2 disp rv d1" data-i18n="modelsH">Six bikes. One coast.</h2>
-<span class="uline rv d2" aria-hidden="true"></span>
 </div>
-<p class="sec-sub mute rv d3" data-i18n="modelsP">Prices in KES. Message us for the on-the-road price and the colours in stock.</p>
+<p class="sec-sub mute rv d2" data-i18n="modelsP">Prices in KES. Message us for the on-the-road price and the colours in stock.</p>
 </div>
 <div class="cards">
-<article class="card rv">
+<article class="card rv d0">
 <div class="card-in">
 <div class="card-img">
-<span class="card-tag cond" data-i18n="tideTag">Commuter</span>
+<span class="card-tag" data-i18n="tideTag">Commuter</span>
 <img class="card-photo flip" src="img/trail.webp" alt="Orange trail motorcycle with knobby tyres and a high front mudguard, side view" data-i18n-alt="altTrail" width="800" height="517" loading="lazy" decoding="async">
 </div>
 <div class="card-body">
@@ -126,7 +115,7 @@
 <p class="card-meta mute" data-i18n="tideMeta">124 cc · 4-speed · rear rack</p>
 <div class="card-foot">
 <p class="price"><span>KES</span>139,000</p>
-<a class="btn-wa sm" href="https://wa.me/254700000000" data-wa="waHello" data-wa-model="Tide 125" target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true"><use href="#i-wa"></use></svg><span data-i18n="ask">Ask on WhatsApp</span></a>
+<a class="btn-wa sm" href="https://wa.me/254700000000" data-wa="waHello" data-wa-model="Tide 125" target="_blank" rel="noopener"><svg class="wa-ic" width="18" height="18" aria-hidden="true"><use href="#i-wa"></use></svg><span data-i18n="ask">Ask on WhatsApp</span></a>
 </div>
 </div>
 </div>
@@ -134,7 +123,7 @@
 <article class="card rv d1">
 <div class="card-in">
 <div class="card-img">
-<span class="card-tag cond" data-i18n="reefTag">Commuter</span>
+<span class="card-tag" data-i18n="reefTag">Commuter</span>
 <img class="card-photo flip" src="img/street.webp" alt="Black and orange naked street motorcycle, side view" data-i18n-alt="altStreet" width="800" height="526" loading="lazy" decoding="async">
 </div>
 <div class="card-body">
@@ -142,7 +131,7 @@
 <p class="card-meta mute" data-i18n="reefMeta">149 cc · 5-speed · low seat</p>
 <div class="card-foot">
 <p class="price"><span>KES</span>158,000</p>
-<a class="btn-wa sm" href="https://wa.me/254700000000" data-wa="waHello" data-wa-model="Reef 150" target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true"><use href="#i-wa"></use></svg><span data-i18n="ask">Ask on WhatsApp</span></a>
+<a class="btn-wa sm" href="https://wa.me/254700000000" data-wa="waHello" data-wa-model="Reef 150" target="_blank" rel="noopener"><svg class="wa-ic" width="18" height="18" aria-hidden="true"><use href="#i-wa"></use></svg><span data-i18n="ask">Ask on WhatsApp</span></a>
 </div>
 </div>
 </div>
@@ -150,7 +139,7 @@
 <article class="card rv d2">
 <div class="card-in">
 <div class="card-img">
-<span class="card-tag cond" data-i18n="duneTag">Trail</span>
+<span class="card-tag" data-i18n="duneTag">Trail</span>
 <img class="card-photo" src="img/trail.webp" alt="Orange trail motorcycle with knobby tyres and a high front mudguard, side view" data-i18n-alt="altTrail" width="800" height="517" loading="lazy" decoding="async">
 </div>
 <div class="card-body">
@@ -158,15 +147,15 @@
 <p class="card-meta mute" data-i18n="duneMeta">249 cc · 24 hp · 6-speed</p>
 <div class="card-foot">
 <p class="price"><span>KES</span>398,000</p>
-<a class="btn-wa sm" href="https://wa.me/254700000000" data-wa="waHello" data-wa-model="Dune 250 Trail" target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true"><use href="#i-wa"></use></svg><span data-i18n="ask">Ask on WhatsApp</span></a>
+<a class="btn-wa sm" href="https://wa.me/254700000000" data-wa="waHello" data-wa-model="Dune 250 Trail" target="_blank" rel="noopener"><svg class="wa-ic" width="18" height="18" aria-hidden="true"><use href="#i-wa"></use></svg><span data-i18n="ask">Ask on WhatsApp</span></a>
 </div>
 </div>
 </div>
 </article>
-<article class="card rv">
+<article class="card rv d0">
 <div class="card-in">
 <div class="card-img">
-<span class="card-tag cond" data-i18n="kilifiTag">Street</span>
+<span class="card-tag" data-i18n="kilifiTag">Street</span>
 <img class="card-photo" src="img/street.webp" alt="Black and orange naked street motorcycle, side view" data-i18n-alt="altStreet" width="800" height="526" loading="lazy" decoding="async">
 </div>
 <div class="card-body">
@@ -174,7 +163,7 @@
 <p class="card-meta mute" data-i18n="kilifiMeta">199 cc · 5-speed · LED lights</p>
 <div class="card-foot">
 <p class="price"><span>KES</span>245,000</p>
-<a class="btn-wa sm" href="https://wa.me/254700000000" data-wa="waHello" data-wa-model="Kilifi 200" target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true"><use href="#i-wa"></use></svg><span data-i18n="ask">Ask on WhatsApp</span></a>
+<a class="btn-wa sm" href="https://wa.me/254700000000" data-wa="waHello" data-wa-model="Kilifi 200" target="_blank" rel="noopener"><svg class="wa-ic" width="18" height="18" aria-hidden="true"><use href="#i-wa"></use></svg><span data-i18n="ask">Ask on WhatsApp</span></a>
 </div>
 </div>
 </div>
@@ -182,7 +171,7 @@
 <article class="card rv d1">
 <div class="card-in">
 <div class="card-img">
-<span class="card-tag cond" data-i18n="midaTag">City</span>
+<span class="card-tag" data-i18n="midaTag">City</span>
 <img class="card-photo" src="img/scooter.webp" alt="Grey scooter with an orange stripe and a rear rack, side view" data-i18n-alt="altScooter" width="800" height="557" loading="lazy" decoding="async">
 </div>
 <div class="card-body">
@@ -190,7 +179,7 @@
 <p class="card-meta mute" data-i18n="midaMeta">110 cc · automatic · light</p>
 <div class="card-foot">
 <p class="price"><span>KES</span>132,000</p>
-<a class="btn-wa sm" href="https://wa.me/254700000000" data-wa="waHello" data-wa-model="Mida 110" target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true"><use href="#i-wa"></use></svg><span data-i18n="ask">Ask on WhatsApp</span></a>
+<a class="btn-wa sm" href="https://wa.me/254700000000" data-wa="waHello" data-wa-model="Mida 110" target="_blank" rel="noopener"><svg class="wa-ic" width="18" height="18" aria-hidden="true"><use href="#i-wa"></use></svg><span data-i18n="ask">Ask on WhatsApp</span></a>
 </div>
 </div>
 </div>
@@ -198,7 +187,7 @@
 <article class="card rv d2">
 <div class="card-in">
 <div class="card-img">
-<span class="card-tag cond" data-i18n="sabakiTag">Adventure</span>
+<span class="card-tag" data-i18n="sabakiTag">Adventure</span>
 <img class="card-photo" src="img/adventure.webp" alt="Black and orange adventure motorcycle with a windscreen and a luggage rack, side view" data-i18n-alt="altAdventure" width="800" height="531" loading="lazy" decoding="async">
 </div>
 <div class="card-body">
@@ -206,126 +195,110 @@
 <p class="card-meta mute" data-i18n="sabakiMeta">399 cc · 40 hp · 6-speed</p>
 <div class="card-foot">
 <p class="price"><span>KES</span>760,000</p>
-<a class="btn-wa sm" href="https://wa.me/254700000000" data-wa="waHello" data-wa-model="Sabaki 400" target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true"><use href="#i-wa"></use></svg><span data-i18n="ask">Ask on WhatsApp</span></a>
+<a class="btn-wa sm" href="https://wa.me/254700000000" data-wa="waHello" data-wa-model="Sabaki 400" target="_blank" rel="noopener"><svg class="wa-ic" width="18" height="18" aria-hidden="true"><use href="#i-wa"></use></svg><span data-i18n="ask">Ask on WhatsApp</span></a>
 </div>
 </div>
 </div>
 </article>
 </div>
-<p class="swipe cond"><span data-i18n="swipe">Swipe for more</span> →</p>
+<p class="swipe"><span data-i18n="swipe">Swipe for more</span> →</p>
 </div>
 </section>
 
-<section class="sec inkbg" id="pay">
-<div class="sep rv" aria-hidden="true"></div>
+<section class="sec panel" id="pay">
 <div class="wrap">
 <div class="sec-head">
 <div>
-<p class="kicker cond rv" data-i18n="payK">Payments</p>
+<p class="kicker rv" data-i18n="payK">Payments</p>
 <h2 class="h2 disp rv d1" data-i18n="payH">Pay the way you want</h2>
-<span class="uline rv d2" aria-hidden="true"></span>
 </div>
-<p class="sec-sub mute rv d3" data-i18n="payP">Four simple ways to own your bike. We help you with the paperwork.</p>
+<p class="sec-sub mute rv d2" data-i18n="payP">Four simple ways to own your bike. We help you with the paperwork.</p>
 </div>
-<div class="plist">
-<div class="prow rv">
-<span class="prow-n" aria-hidden="true">A</span>
-<h3 class="prow-t disp" data-i18n="cash">Cash</h3>
-<p class="prow-p mute" data-i18n="cashP">Pay at the showroom, sign, and ride out the same day.</p>
-<span class="prow-ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="2"></rect><circle cx="12" cy="12" r="2.5"></circle><path d="M6 9.5v5M18 9.5v5"></path></svg></span>
+<div class="pgrid">
+<div class="pay rv">
+<span class="pay-ic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="2"></rect><circle cx="12" cy="12" r="2.5"></circle><path d="M6 9.5v5M18 9.5v5"></path></svg></span>
+<h3 class="pay-t disp" data-i18n="cash">Cash</h3>
+<p class="pay-p mute" data-i18n="cashP">Pay at the showroom, sign, and ride out the same day.</p>
 </div>
-<div class="prow hot rv d1">
-<span class="prow-n" aria-hidden="true">B</span>
-<h3 class="prow-t disp">M-Pesa</h3>
-<p class="prow-p mute" data-i18n="mpesaP">Lipa na M-Pesa. Paybill [NUMBER], account: your name.</p>
-<span class="prow-ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"></rect><path d="M10.5 18h3"></path><path d="M9.5 9.5l2 2 3.5-3.5"></path></svg></span>
+<div class="pay hot rv d1">
+<span class="pay-ic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"></rect><path d="M10.5 18h3"></path><path d="M9.5 9.5l2 2 3.5-3.5"></path></svg></span>
+<h3 class="pay-t disp">M-Pesa</h3>
+<p class="pay-p mute" data-i18n="mpesaP">Lipa na M-Pesa. Paybill [NUMBER], account: your name.</p>
 </div>
-<div class="prow rv d2">
-<span class="prow-n" aria-hidden="true">C</span>
-<h3 class="prow-t disp" data-i18n="inst">Installments</h3>
-<p class="prow-p mute" data-i18n="instP">Pay a deposit today, then weekly or monthly. Made for boda riders.</p>
-<span class="prow-ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path><path d="M8 15h2M12 15h2"></path></svg></span>
+<div class="pay rv d2">
+<span class="pay-ic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path><path d="M8 15h2M12 15h2"></path></svg></span>
+<h3 class="pay-t disp" data-i18n="inst">Installments</h3>
+<p class="pay-p mute" data-i18n="instP">Pay a deposit today, then weekly or monthly. Made for boda riders.</p>
 </div>
-<div class="prow rv d3">
-<span class="prow-n" aria-hidden="true">D</span>
-<h3 class="prow-t disp" data-i18n="fin">Financing</h3>
-<p class="prow-p mute" data-i18n="finP">With partner banks and SACCOs. Bring your ID, KRA PIN and payslip or M-Pesa statement.</p>
-<span class="prow-ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6"></path><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8"></path><path d="M3 21h18"></path></svg></span>
+<div class="pay rv d3">
+<span class="pay-ic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6"></path><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8"></path><path d="M3 21h18"></path></svg></span>
+<h3 class="pay-t disp" data-i18n="fin">Financing</h3>
+<p class="pay-p mute" data-i18n="finP">With partner banks and SACCOs. Bring your ID, KRA PIN and payslip or M-Pesa statement.</p>
 </div>
 </div>
 </div>
 </section>
 
-<section class="sec light" id="service">
+<div class="marquee rev" aria-hidden="true"><div class="mq-track"><div class="mq-set"><span>Parts</span><i aria-hidden="true"></i><span>Service</span><i aria-hidden="true"></i><span>Tyres</span><i aria-hidden="true"></i><span>Chains</span><i aria-hidden="true"></i><span>Batteries</span><i aria-hidden="true"></i><span>Helmets</span><i aria-hidden="true"></i><span>Boda fast lane</span><i aria-hidden="true"></i></div><div class="mq-set"><span>Parts</span><i aria-hidden="true"></i><span>Service</span><i aria-hidden="true"></i><span>Tyres</span><i aria-hidden="true"></i><span>Chains</span><i aria-hidden="true"></i><span>Batteries</span><i aria-hidden="true"></i><span>Helmets</span><i aria-hidden="true"></i><span>Boda fast lane</span><i aria-hidden="true"></i></div></div></div>
+
+<section class="sec" id="service">
 <div class="wrap">
 <div class="sec-head">
 <div>
-<p class="kicker cond rv" data-i18n="svcK">Parts & service</p>
+<p class="kicker rv" data-i18n="svcK">Parts & service</p>
 <h2 class="h2 disp rv d1" data-i18n="svcH">We keep you riding</h2>
-<span class="uline rv d2" aria-hidden="true"></span>
 </div>
-<p class="sec-sub mute rv d3" data-i18n="svcP">A full workshop behind the showroom. Any bike, any brand.</p>
+<p class="sec-sub mute rv d2" data-i18n="svcP">A full workshop behind the showroom. Any bike, any brand.</p>
 </div>
 <div class="svc">
 <ul class="svc-list">
-<li class="rv"><span class="svc-n">01</span><span data-i18n="svc1">Original and quality parts in stock</span></li>
-<li class="rv d1"><span class="svc-n">02</span><span data-i18n="svc2">Full service and repairs</span></li>
-<li class="rv d2"><span class="svc-n">03</span><span data-i18n="svc3">Same-day fast lane for boda riders</span></li>
-<li class="rv d3"><span class="svc-n">04</span><span data-i18n="svc4">Tyres, chains, batteries, helmets</span></li>
+<li class="rv"><span data-i18n="svc1">Original and quality parts in stock</span></li>
+<li class="rv d1"><span data-i18n="svc2">Full service and repairs</span></li>
+<li class="rv d2"><span data-i18n="svc3">Same-day fast lane for boda riders</span></li>
+<li class="rv d3"><span data-i18n="svc4">Tyres, chains, batteries, helmets</span></li>
 </ul>
 <div class="svc-side">
-<div class="shop rv"><span class="cond" data-i18n="photoW">Workshop photo</span></div>
+<div class="shop rv"><span data-i18n="photoW">Workshop photo</span></div>
 <div class="part rv d1">
 <h3 class="disp" data-i18n="partH">Need a part?</h3>
 <p data-i18n="partP">Send the bike model and a photo of the part. We reply with price and stock.</p>
-<a class="btn-wa" href="https://wa.me/254700000000" data-wa="waPart" target="_blank" rel="noopener"><svg width="20" height="20" aria-hidden="true"><use href="#i-wa"></use></svg><span data-i18n="partB">Ask for a part</span></a>
+<a class="btn-wa dark" href="https://wa.me/254700000000" data-wa="waPart" target="_blank" rel="noopener"><svg class="wa-ic" width="20" height="20" aria-hidden="true"><use href="#i-wa"></use></svg><span data-i18n="partB">Ask for a part</span></a>
 </div>
 </div>
 </div>
 </div>
 </section>
 
-<section class="sec dark" id="visit">
-<div class="sep rv" aria-hidden="true"></div>
+<section class="sec panel" id="visit">
 <div class="wrap">
 <div class="sec-head">
 <div>
-<p class="kicker cond rv" data-i18n="visitK">Find us</p>
+<p class="kicker rv" data-i18n="visitK">Find us</p>
 <h2 class="h2 disp rv d1" data-i18n="visitH">Come for a test ride</h2>
-<span class="uline rv d2" aria-hidden="true"></span>
 </div>
-<p class="sec-sub mute rv d3" data-i18n="visitP">On Watamu Road, with easy parking in front of the showroom.</p>
+<p class="sec-sub mute rv d2" data-i18n="visitP">On Watamu Road, with easy parking in front of the showroom.</p>
 </div>
 <div class="visit">
-<div class="map rv">
-<svg viewBox="0 0 700 420" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Map placeholder: Coastline Moto on Watamu Road, Watamu">
-<rect width="700" height="420" fill="#f2f0eb"></rect>
-<path d="M540 0 C515 90 575 150 550 220 C532 280 590 340 610 420 L700 420 L700 0 Z" fill="#d9d5cb"></path>
-<path d="M0 84H700M0 168H700M0 252H700M0 336H700M84 0V420M168 0V420M252 0V420M336 0V420M420 0V420M504 0V420" stroke="rgba(17,17,17,.06)" stroke-width="1"></path>
-<path d="M60 420 C160 330 300 250 470 200 C520 186 560 150 600 120" fill="none" stroke="#ffffff" stroke-width="12"></path>
-<path d="M60 420 C160 330 300 250 470 200 C520 186 560 150 600 120" fill="none" stroke="rgba(17,17,17,.18)" stroke-width="1"></path>
-<path d="M260 0 C280 100 330 180 360 240" fill="none" stroke="#ffffff" stroke-width="7"></path>
-<text x="150" y="330" fill="rgba(17,17,17,.6)" font-size="12" letter-spacing="2" transform="rotate(-33 150 330)">WATAMU ROAD</text>
-<text x="640" y="40" fill="#b83c0b" font-size="12" letter-spacing="4" transform="rotate(90 640 40)">INDIAN OCEAN</text>
-<g transform="translate(420 214)">
-<circle class="ping" r="28" fill="rgba(255,95,31,.25)"></circle>
-<circle r="9" fill="#ff5f1f"></circle>
-<circle r="3.5" fill="#111111"></circle>
-</g>
-<text x="402" y="246" fill="#111111" font-size="13" font-weight="700" letter-spacing="2" text-anchor="end">COASTLINE MOTO</text>
+<div class="map rv" id="map">
+<svg class="map-ph" viewBox="0 0 700 420" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Map: Coastline Moto on Watamu Road, Watamu">
+<rect width="700" height="420" fill="#141416"></rect>
+<path d="M540 0 C515 90 575 150 550 220 C532 280 590 340 610 420 L700 420 L700 0 Z" fill="#0d1a24"></path>
+<path d="M0 84H700M0 168H700M0 252H700M0 336H700M84 0V420M168 0V420M252 0V420M336 0V420M420 0V420M504 0V420" stroke="rgba(255,255,255,.05)" stroke-width="1"></path>
+<path d="M60 420 C160 330 300 250 470 200 C520 186 560 150 600 120" fill="none" stroke="#2a2a2e" stroke-width="12"></path>
+<path d="M260 0 C280 100 330 180 360 240" fill="none" stroke="#2a2a2e" stroke-width="7"></path>
+<g transform="translate(420 214)"><circle class="ping" r="28" fill="rgba(255,95,31,.25)"></circle><circle r="9" fill="#ff5f1f"></circle><circle r="3.5" fill="#0a0a0b"></circle></g>
 </svg>
-<span class="map-note cond" data-i18n="mapNote">Google Maps goes here</span>
 </div>
 <div class="info rv d1">
-<div class="info-row"><p class="info-l cond" data-i18n="addrL">Address</p><p class="info-v">Watamu Road, Watamu
+<div class="info-row"><p class="info-l" data-i18n="addrL">Address</p><p class="info-v">Watamu Road, Watamu
 Kilifi County, Kenya</p></div>
-<div class="info-row"><p class="info-l cond" data-i18n="hoursL">Opening hours</p><p class="info-v" data-i18n="hours">Mon–Sat   8:30 – 18:00
+<div class="info-row"><p class="info-l" data-i18n="hoursL">Opening hours</p><p class="info-v" data-i18n="hours">Mon–Sat   8:30 – 18:00
 Sunday   10:00 – 14:00</p></div>
-<div class="info-row"><p class="info-l cond" data-i18n="phoneL">Phone & email</p><p class="info-v">+254 7XX XXX XXX
+<div class="info-row"><p class="info-l" data-i18n="phoneL">Phone & email</p><p class="info-v">+254 7XX XXX XXX
 ride@coastlinemoto.co.ke</p></div>
 <div class="ctas">
-<a class="btn-wa" href="https://wa.me/254700000000" data-wa="waGen" target="_blank" rel="noopener"><svg width="20" height="20" aria-hidden="true"><use href="#i-wa"></use></svg>WhatsApp</a>
-<a class="btn-line" href="https://maps.google.com/?q=Watamu+Road+Watamu" target="_blank" rel="noopener" data-i18n="dir">Get directions</a>
+<a class="btn-wa" href="https://wa.me/254700000000" data-wa="waGen" target="_blank" rel="noopener"><svg class="wa-ic" width="20" height="20" aria-hidden="true"><use href="#i-wa"></use></svg><span data-i18n="wa">WhatsApp</span></a>
+<a class="btn-line" href="https://www.google.com/maps/dir/?api=1&amp;destination=-3.3515,40.0195" target="_blank" rel="noopener" data-i18n="dir">Get directions</a>
 </div>
 </div>
 </div>
@@ -333,16 +306,17 @@ ride@coastlinemoto.co.ke</p></div>
 </section>
 </main>
 
-<footer class="ftr inkbg">
+<footer class="ftr">
 <div class="wrap">
-<span class="ftr-big" aria-hidden="true">COASTLINE</span>
+<span class="ftr-big" aria-hidden="true">Twende</span>
 <div class="ftr-in mute">
+<img src="img/logo-dark.svg" width="152" height="24" alt="Coastline" loading="lazy">
 <span>© 2026 Coastline Moto Watamu · <span data-i18n="rights">All rights reserved</span></span>
 <span data-i18n="demo">Demo site by DEC’S · Sample content</span>
 </div>
 </div>
 </footer>
 
-<a class="fab pulse" href="https://wa.me/254700000000" data-wa="waGen" data-i18n-label="ask" aria-label="Ask on WhatsApp" target="_blank" rel="noopener"><svg width="26" height="26" aria-hidden="true"><use href="#i-wa"></use></svg></a>
+<a class="fab" href="https://wa.me/254700000000" data-wa="waGen" data-i18n-label="ask" aria-label="Ask on WhatsApp" target="_blank" rel="noopener"><svg class="wa-ic" width="30" height="30" aria-hidden="true"><use href="#i-wa"></use></svg></a>
 </body>
 </html>

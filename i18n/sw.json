@@ -9,7 +9,6 @@
   "lead": "Pikipiki, vipuri na huduma kwa Watamu, Gede na Kilifi. Panga jaribio lako kwa WhatsApp.",
   "ask": "Uliza kwa WhatsApp",
   "see": "Tazama pikipiki",
-  "scroll": "Shuka",
   "from": "Kuanzia",
   "modelsK": "Pikipiki zetu",
   "modelsH": "Pikipiki sita. Pwani moja.",
@@ -71,5 +70,7 @@
   "altTrail": "Pikipiki ya njia mbaya ya rangi ya machungwa yenye matairi ya meno, mwonekano wa pembeni",
   "altStreet": "Pikipiki ya mjini ya rangi nyeusi na machungwa, mwonekano wa pembeni",
   "altScooter": "Skuta ya kijivu yenye mstari wa machungwa na kibebeo cha nyuma, mwonekano wa pembeni",
-  "altAdventure": "Pikipiki ya safari ya rangi nyeusi na machungwa yenye kioo cha upepo na kibebeo, mwonekano wa pembeni"
+  "altAdventure": "Pikipiki ya safari ya rangi nyeusi na machungwa yenye kioo cha upepo na kibebeo, mwonekano wa pembeni",
+  "menu": "Menyu",
+  "wa": "WhatsApp"
 }

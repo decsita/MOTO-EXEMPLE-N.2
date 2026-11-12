@@ -9,7 +9,6 @@
   "lead": "Bikes, parts and service for Watamu, Gede and Kilifi. Book your test ride on WhatsApp.",
   "ask": "Ask on WhatsApp",
   "see": "View the lineup",
-  "scroll": "Scroll",
   "from": "From",
   "modelsK": "The lineup",
   "modelsH": "Six bikes. One coast.",
@@ -71,5 +70,7 @@
   "altTrail": "Orange trail motorcycle with knobby tyres and a high front mudguard, side view",
   "altStreet": "Black and orange naked street motorcycle, side view",
   "altScooter": "Grey scooter with an orange stripe and a rear rack, side view",
-  "altAdventure": "Black and orange adventure motorcycle with a windscreen and a luggage rack, side view"
+  "altAdventure": "Black and orange adventure motorcycle with a windscreen and a luggage rack, side view",
+  "menu": "Menu",
+  "wa": "WhatsApp"
 }

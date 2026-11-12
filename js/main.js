@@ -43,6 +43,23 @@ document.querySelectorAll('[data-lang]').forEach(b => {
 });
 setLang(root.lang === 'sw' ? 'sw' : 'en'); // la lingua iniziale la decide lo script nell'<head>
 
+/* ---------- Header: diventa pieno dopo la hero; menu a tendina sul telefono ---------- */
+const hdr = document.querySelector('.hdr');
+const onScroll = () => hdr.classList.toggle('solid', scrollY > 40);
+onScroll();
+addEventListener('scroll', onScroll, { passive: true });
+
+const menuBtn = document.querySelector('.menu-btn');
+const nav = document.getElementById('nav');
+function menu(open) {
+  menuBtn.setAttribute('aria-expanded', open);
+  nav.classList.toggle('open', open);
+  hdr.classList.toggle('solid', open || scrollY > 40);
+}
+menuBtn.addEventListener('click', () => menu(menuBtn.getAttribute('aria-expanded') !== 'true'));
+nav.addEventListener('click', e => { if (e.target.closest('a')) menu(false); });
+addEventListener('keydown', e => { if (e.key === 'Escape' && nav.classList.contains('open')) { menu(false); menuBtn.focus(); } });
+
 /* ---------- Comparsa delle sezioni e contatori dei dati tecnici ---------- */
 function countUp(el) {
   const end = Number(el.dataset.count), t0 = performance.now();
