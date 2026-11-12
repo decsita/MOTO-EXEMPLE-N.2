@@ -46,7 +46,7 @@
   "dir": "Get directions",
   "mapNote": "Google Maps goes here",
   "rights": "All rights reserved",
-  "demo": "Demo site by DEC’S",
+  "demo": "Demo site by DEC’S · Sample content",
   "waHello": "Hello Coastline Moto, I am interested in the ",
   "waPart": "Hello Coastline Moto, I need a spare part for my bike.",
   "waGen": "Hello Coastline Moto, I have a question.",
@@ -66,5 +66,10 @@
   "midaTag": "City",
   "midaMeta": "110 cc · automatic · light",
   "sabakiTag": "Adventure",
-  "sabakiMeta": "399 cc · 40 hp · 6-speed"
+  "sabakiMeta": "399 cc · 40 hp · 6-speed",
+  "altHero": "Orange and white Dune 250 Trail motorcycle with knobby tyres, side view",
+  "altTrail": "Orange trail motorcycle with knobby tyres and a high front mudguard, side view",
+  "altStreet": "Black and orange naked street motorcycle, side view",
+  "altScooter": "Grey scooter with an orange stripe and a rear rack, side view",
+  "altAdventure": "Black and orange adventure motorcycle with a windscreen and a luggage rack, side view"
 }

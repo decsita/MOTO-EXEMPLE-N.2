@@ -46,7 +46,7 @@
   "dir": "Pata maelekezo",
   "mapNote": "Ramani ya Google itawekwa hapa",
   "rights": "Haki zote zimehifadhiwa",
-  "demo": "Tovuti ya mfano na DEC’S",
+  "demo": "Tovuti ya mfano na DEC’S · Maudhui ya mfano",
   "waHello": "Habari Coastline Moto, ninavutiwa na ",
   "waPart": "Habari Coastline Moto, ninahitaji kipuri cha pikipiki yangu.",
   "waGen": "Habari Coastline Moto, nina swali.",
@@ -66,5 +66,10 @@
   "midaTag": "Mjini",
   "midaMeta": "110 cc · otomatiki · nyepesi",
   "sabakiTag": "Safari",
-  "sabakiMeta": "399 cc · 40 hp · gia 6"
+  "sabakiMeta": "399 cc · 40 hp · gia 6",
+  "altHero": "Pikipiki ya Dune 250 Trail ya rangi ya machungwa na nyeupe yenye matairi ya njia mbaya, mwonekano wa pembeni",
+  "altTrail": "Pikipiki ya njia mbaya ya rangi ya machungwa yenye matairi ya meno, mwonekano wa pembeni",
+  "altStreet": "Pikipiki ya mjini ya rangi nyeusi na machungwa, mwonekano wa pembeni",
+  "altScooter": "Skuta ya kijivu yenye mstari wa machungwa na kibebeo cha nyuma, mwonekano wa pembeni",
+  "altAdventure": "Pikipiki ya safari ya rangi nyeusi na machungwa yenye kioo cha upepo na kibebeo, mwonekano wa pembeni"
 }

@@ -23,6 +23,7 @@ async function setLang(lang, chosen) {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     if (t[el.dataset.i18n] != null) el.textContent = t[el.dataset.i18n];
   });
+  document.querySelectorAll('[data-i18n-alt]').forEach(el => { el.alt = t[el.dataset.i18nAlt]; });
   document.querySelectorAll('[data-i18n-label]').forEach(el => {
     el.setAttribute('aria-label', t[el.dataset.i18nLabel]);
   });
