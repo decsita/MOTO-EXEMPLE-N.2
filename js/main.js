@@ -111,3 +111,39 @@ if (reduced || !('IntersectionObserver' in window)) {
     });
   }
 }
+
+/* ---------- Video d'apertura ----------
+   Per accenderlo: metti i file in video/ e scrivi data-intro="on" sul tag <html> in index.html.
+   File attesi: intro-9x16.mp4 (telefono, 720x1280) e intro-16x9.mp4 (computer, 1280x720), con le versioni .webm (AV1). */
+(function () {
+  const box = document.getElementById('intro');
+  if (!root.classList.contains('intro-on') || !box) return;
+  const v = box.querySelector('video');
+  const IMPACT = 0.35;   // secondi prima della fine in cui parte il lampo dell'impatto
+  let done = false;
+
+  function reveal(impact) {
+    if (done) return;
+    done = true;
+    try { sessionStorage.setItem('introSeen', '1'); } catch {}
+    if (impact) box.classList.add('hit');
+    box.classList.add('out');
+    setTimeout(() => { root.classList.remove('intro-on'); box.remove(); }, impact ? 950 : 600);
+  }
+
+  const portrait = innerHeight > innerWidth;
+  const name = portrait ? 'video/intro-9x16' : 'video/intro-16x9';
+  v.poster = name + '.webp';
+  v.innerHTML = `<source src="${name}.webm" type='video/webm; codecs="av01.0.05M.08"'><source src="${name}.mp4" type="video/mp4">`;
+  v.load();
+
+  v.addEventListener('timeupdate', () => { if (v.duration && v.duration - v.currentTime < IMPACT) reveal(true); });
+  v.addEventListener('ended', () => reveal(true));
+  v.addEventListener('error', () => reveal(false), true);
+  box.querySelector('.intro-skip').addEventListener('click', () => reveal(false));
+  addEventListener('keydown', e => { if (e.key === 'Escape') reveal(false); }, { once: true });
+  const p = v.play();
+  if (p) p.catch(() => reveal(false));
+  // Rete lenta: se dopo 2,5 s il video non e' partito, si apre direttamente il sito
+  setTimeout(() => { if (v.currentTime === 0) reveal(false); }, 2500);
+})();

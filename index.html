@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-intro="off">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,6 +16,14 @@
 /* Lingua prima del primo disegno: ?lang= nell'indirizzo, poi quella salvata, poi inglese */
 (function (d) {
   d.classList.add('js');
+  /* Video d'apertura: solo se pronto (data-intro="on"), una volta per visita, mai con movimento ridotto,
+     risparmio dati o rete 2G. Deciso qui, prima del primo disegno, così la pagina non lampeggia. */
+  try {
+    var c = navigator.connection || {};
+    if (d.dataset.intro === 'on' && !sessionStorage.getItem('introSeen') &&
+        !matchMedia('(prefers-reduced-motion: reduce)').matches &&
+        !c.saveData && !/2g/.test(c.effectiveType || '')) d.classList.add('intro-on');
+  } catch (e) {}
   var l = new URLSearchParams(location.search).get('lang');
   try { l = l || localStorage.getItem('lang'); } catch (e) {}
   if (l !== 'sw') return;
@@ -28,6 +36,11 @@
 <script src="js/map.js" defer></script>
 </head>
 <body>
+<div class="intro" id="intro" aria-hidden="true">
+<video class="intro-v" muted playsinline preload="none" disablepictureinpicture></video>
+<span class="intro-flash"></span>
+<button type="button" class="intro-skip" data-i18n="skip">Skip</button>
+</div>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-wa" viewBox="0 0 32 32"><path fill="var(--wa-b,#fff)" d="M16 4a11 11 0 1 1-5.3 20.6L4.5 26.6l2-5.9A11 11 0 0 1 16 4z"/><path fill="var(--wa-p,#138a46)" d="M11.6 9.6c.6-.6 1.6-.6 2.1.1l1.4 2c.4.6.3 1.4-.2 1.9l-.9.9c.6 1.5 2.1 3 3.6 3.6l.9-.9c.5-.5 1.3-.6 1.9-.2l2 1.4c.7.5.7 1.5.1 2.1l-1 1c-1 1-2.6 1.2-3.9.6-3.2-1.4-5.7-3.9-7.1-7.1-.6-1.3-.4-2.9.6-3.9z"/></symbol></svg>
 
 <header class="hdr">
