@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coastline Moto Watamu · Demo DEC’S</title>
+<meta name="description" content="Demo DEC’S: sito di esempio per un concessionario moto a Watamu. Contenuti di esempio.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Barlow:wght@400;500;600;700&amp;family=Barlow+Condensed:wght@600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#111111}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+.site{--ink:#111111;--graph:#1c1c1c;--graph2:#262626;--paper:#f2f0eb;--paper2:#e7e4dc;--or:#ff5f1f;--ort:#b83c0b;--e:cubic-bezier(.22,1,.36,1);position:relative;background:var(--ink);color:#ffffff;font-family:'Barlow',system-ui,sans-serif;overflow-x:clip}
+.site *{box-sizing:border-box}
+.site a{color:inherit;text-decoration:none}
+.site a:focus-visible,.site button:focus-visible{outline:2px solid var(--or);outline-offset:3px}
+.cq{container-type:inline-size}
+.wrap{width:100%;max-width:1280px;margin:0 auto;padding:0 48px}
+.light{background:var(--paper);color:var(--ink)}
+.dark{background:var(--graph);color:#ffffff}
+.inkbg{background:var(--ink);color:#ffffff}
+.mute{color:rgba(255,255,255,.7)}
+.light .mute{color:rgba(17,17,17,.7)}
+.disp{font-family:'Anton',Impact,sans-serif;font-weight:400;text-transform:uppercase}
+.cond{font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.hdr{position:relative;z-index:5}
+.hdr-in{display:flex;align-items:center;gap:36px;height:80px}
+.logo{display:flex;align-items:center;gap:12px;min-height:44px}
+.logo-m{width:38px;height:38px;background:var(--or);color:var(--ink);display:flex;align-items:center;justify-content:center}
+.logo-t{display:flex;flex-direction:column;gap:2px;line-height:1}
+.logo-w{font-family:'Anton',sans-serif;font-size:22px;letter-spacing:.02em}
+.logo-s{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.28em;color:var(--ort)}
+.nav{display:flex;gap:30px;margin-left:auto}
+.nav a{display:flex;align-items:baseline;gap:6px;padding:12px 0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:.14em;text-transform:uppercase;position:relative}
+.nav a small{font-size:11px;color:var(--ort);letter-spacing:.04em}
+.nav a::after{content:'';position:absolute;left:0;right:0;bottom:6px;height:2px;background:var(--or);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--e)}
+.nav a:hover::after{transform:scaleX(1)}
+.lang{display:flex;border:1.5px solid var(--ink);padding:2px}
+.lang button{appearance:none;border:0;background:none;cursor:pointer;font:700 13px/1 'Barlow Condensed',sans-serif;letter-spacing:.16em;padding:0 14px;height:40px;min-width:44px;color:var(--ink);transition:background .3s,color .3s}
+.lang button.on{background:var(--ink);color:#ffffff}
+.hero{position:relative;padding:44px 0 132px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;pointer-events:none}
+.ghost{position:absolute;font-family:'Anton',sans-serif;line-height:.8;color:transparent;white-space:nowrap;user-select:none;transition:transform .7s var(--e)}
+.g1{font-size:44cqw;right:-4cqw;top:12%;-webkit-text-stroke:2px rgba(255,95,31,.45);transform:translate3d(calc(var(--mx,0) * -46px),calc(var(--my,0) * -26px + var(--sy,0) * .28px),0)}
+.g2{font-size:16cqw;left:-1cqw;bottom:2%;-webkit-text-stroke:1.5px rgba(255,255,255,.12);transform:translate3d(calc(var(--mx,0) * 28px),calc(var(--my,0) * 16px + var(--sy,0) * -.12px),0)}
+.eyebrow{position:relative;display:flex;align-items:center;gap:14px;margin:0 0 18px;color:var(--or);font-size:14px}
+.eyebrow::before{content:'';width:36px;height:3px;background:var(--or)}
+.h1{position:relative;margin:0;font-size:clamp(76px,12.5cqw,190px);line-height:.88;letter-spacing:.005em}
+.h1 span{display:block}
+.or{color:var(--or)}
+.hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:32px;align-items:end}
+.hero-bike{position:relative;aspect-ratio:8/5;margin-top:-2cqw;z-index:2}
+.hero-copy{position:relative;z-index:3;padding-bottom:12px}
+.lead{margin:28px 0 0;max-width:420px;font-size:18px;line-height:1.55}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn-wa{position:relative;display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 26px;background:var(--or);color:var(--ink);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:.1em;text-transform:uppercase;transition:transform .3s var(--e),background .3s,color .3s}
+.btn-wa:hover{transform:translateY(-2px)}
+.btn-wa.sm{height:44px;padding:0 16px;font-size:14px;background:var(--ink);color:#ffffff}
+.btn-wa.sm svg{color:var(--or)}
+.card:hover .btn-wa.sm{background:var(--or);color:var(--ink)}
+.card:hover .btn-wa.sm svg{color:var(--ink)}
+.pulse{animation:pulse 2.8s ease-out infinite}
+.btn-line{display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 22px;border:1.5px solid rgba(255,255,255,.5);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:.1em;text-transform:uppercase;transition:border-color .3s,color .3s}
+.btn-line:hover{border-color:var(--or);color:var(--or)}
+.hero-model{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;max-width:420px;margin:36px 0 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.2)}
+.hero-model .cond{font-size:13px}
+.hero-model .disp{font-size:30px;line-height:1}
+.hud{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.bike-wrap{position:absolute;inset:0;animation:bikeIn 1.6s var(--e) .25s both}
+.bike-img{display:block;width:100%;height:100%;object-fit:contain;object-position:center bottom;transform:scaleX(-1);filter:drop-shadow(0 24px 22px rgba(0,0,0,.55));-webkit-box-reflect:below 0 linear-gradient(transparent 82%,rgba(255,255,255,.12))}
+.shine{position:absolute;inset:0;overflow:hidden;pointer-events:none;transform:scaleX(-1);-webkit-mask:url(img/f0e79dfd1ef7f020102479a9029292f8.webp) center bottom / contain no-repeat;mask:url(img/f0e79dfd1ef7f020102479a9029292f8.webp) center bottom / contain no-repeat}
+.shine::before{content:'';position:absolute;top:-10%;bottom:-10%;left:-30%;width:22%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);mix-blend-mode:screen;transform:skewX(-18deg);animation:shine 6.5s ease-in-out 1.7s infinite}
+.brk{stroke-dasharray:100;animation:brk 1.2s var(--e) 1.4s both}
+.gline{stroke-dasharray:600;animation:gline 1.8s var(--e) 1.1s both}
+.scroll{position:absolute;right:48px;bottom:36px;display:flex;align-items:center;gap:14px;font-size:12px;color:rgba(255,255,255,.7);z-index:3}
+.sl{position:relative;width:2px;height:48px;background:rgba(255,255,255,.2);overflow:hidden}
+.sl::after{content:'';position:absolute;left:0;top:0;width:2px;height:16px;background:var(--or);animation:sl 1.8s var(--e) infinite}
+.specs{background:var(--or);color:var(--ink)}
+.spec-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;background:rgba(17,17,17,.22)}
+.spec{background:var(--or);padding:34px 28px}
+.spec-v{margin:0;display:flex;align-items:baseline;gap:10px}
+.num{font-family:'Anton',sans-serif;font-size:clamp(52px,5cqw,76px);line-height:1;font-variant-numeric:tabular-nums}
+.unit{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:.14em}
+.spec-l{margin:8px 0 0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:rgba(17,17,17,.78)}
+.sec{position:relative;padding:128px 0}
+.sep{position:absolute;top:0;left:0;right:0;height:2px;background:var(--or);transform-origin:left center}
+.sec-head{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,360px);gap:40px;align-items:end;margin-bottom:64px}
+.sec-num{display:block;font-family:'Anton',sans-serif;font-size:200px;line-height:.78}
+.kicker{margin:0 0 14px;font-size:14px;color:var(--or)}
+.light .kicker{color:var(--ort)}
+.h2{margin:0;font-size:clamp(46px,5.6cqw,86px);line-height:.95}
+.uline{display:block;width:120px;height:5px;margin-top:22px;background:var(--or);transform-origin:left center}
+.sec-sub{margin:0;font-size:17px;line-height:1.6}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.card{perspective:1000px}
+.card-in{height:100%;background:#ffffff;border-radius:10px;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));box-shadow:0 1px 0 rgba(17,17,17,.08);transition:transform .4s var(--e),box-shadow .4s}
+.card:hover .card-in{box-shadow:0 0 0 2px var(--or),0 28px 60px -24px rgba(255,95,31,.65)}
+.card-img{position:relative;aspect-ratio:16/10;background:var(--paper2);border-radius:10px 10px 0 0;overflow:hidden;padding:32px 18px 16px}
+.card-photo{display:block;width:100%;height:100%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 12px 10px rgba(17,17,17,.24));transition:scale .6s var(--e)}
+.card-photo.flip{transform:scaleX(-1)}
+.card:hover .card-photo{scale:1.05}
+.card-tag{position:absolute;top:0;left:0;padding:8px 12px;background:var(--or);color:var(--ink);font-size:12px}
+.card-ph{position:absolute;right:12px;bottom:10px;font-size:11px;color:rgba(17,17,17,.6)}
+.card-body{padding:22px 22px 24px}
+.card-name{margin:0;font-size:30px;line-height:1}
+.card-meta{margin:8px 0 0;font-size:15px}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:20px;flex-wrap:wrap}
+.price{margin:0;font-family:'Anton',sans-serif;font-size:28px;line-height:1}
+.price span{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.14em;color:var(--ort);margin-right:6px;vertical-align:middle}
+.swipe{display:none;margin:18px 0 0;font-size:13px;color:rgba(17,17,17,.7)}
+.plist{border-bottom:1px solid rgba(255,255,255,.16)}
+.prow{position:relative;display:grid;grid-template-columns:90px minmax(0,4fr) minmax(0,5fr) 56px;gap:28px;align-items:center;padding:34px 0;border-top:1px solid rgba(255,255,255,.16)}
+.prow::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--or);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--e)}
+.prow:hover::after{transform:scaleX(1)}
+.prow-n{font-family:'Anton',sans-serif;font-size:44px;line-height:1;color:rgba(255,255,255,.28);transition:color .3s}
+.prow:hover .prow-n{color:var(--or)}
+.prow-t{margin:0;font-size:40px;line-height:1;transition:color .3s}
+.prow:hover .prow-t{color:var(--or)}
+.prow-p{margin:0;font-size:17px;line-height:1.55}
+.prow-ic{width:56px;height:56px;border:1.5px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;color:var(--or)}
+.prow.hot .prow-ic{background:var(--or);border-color:var(--or);color:var(--ink)}
+.svc{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:40px;align-items:start}
+.svc-list{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.svc-list li{display:flex;align-items:center;gap:22px;padding:24px 0;border-bottom:1px solid rgba(17,17,17,.16);font-size:20px;font-weight:600;line-height:1.3;transition:padding .4s var(--e),color .3s}
+.svc-list li:hover{padding-left:12px;color:var(--ort)}
+.svc-n{flex:0 0 44px;font-family:'Anton',sans-serif;font-size:28px;color:var(--ort)}
+.svc-side{display:flex;flex-direction:column;gap:20px}
+.shop{position:relative;aspect-ratio:16/9;background-color:var(--graph);background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.05) 0 2px,transparent 2px 14px);display:flex;align-items:flex-end;padding:18px}
+.shop .cond{font-size:12px;color:rgba(255,255,255,.75)}
+.part{background:var(--or);color:var(--ink);padding:32px;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.part h3{margin:0;font-size:40px;line-height:1}
+.part p{margin:0;font-size:17px;line-height:1.55;max-width:420px}
+.part .btn-wa{background:var(--ink);color:#ffffff}
+.part .btn-wa svg{color:var(--or)}
+.visit{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:24px;align-items:stretch}
+.map{position:relative;overflow:hidden;background:var(--paper);min-height:460px}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.ping{transform-box:fill-box;transform-origin:center;animation:ping 2.4s ease-out infinite}
+.map-note{position:absolute;left:16px;bottom:16px;padding:9px 14px;background:var(--ink);color:#ffffff;font-size:12px}
+.info{display:flex;flex-direction:column;border-top:2px solid var(--or)}
+.info-row{padding:22px 0;border-bottom:1px solid rgba(255,255,255,.16)}
+.info-l{margin:0 0 8px;font-size:13px;color:var(--or)}
+.info-v{margin:0;font-size:18px;line-height:1.55;font-weight:500;white-space:pre-line}
+.info .ctas{margin-top:26px}
+.ftr{padding:72px 0 110px;overflow:hidden}
+.ftr-big{display:block;font-family:'Anton',sans-serif;font-size:19cqw;line-height:.8;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.18);white-space:nowrap;margin-bottom:40px}
+.ftr-in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px}
+.fab{position:fixed;right:20px;bottom:20px;z-index:20;width:60px;height:60px;border-radius:50%;background:var(--or);color:var(--ink);display:flex;align-items:center;justify-content:center}
+.rv{transition:opacity .8s var(--e),transform .8s var(--e)}
+.anim .rv{opacity:0;transform:translateY(30px)}
+.anim .rv.in{opacity:1;transform:none}
+.anim .sep.rv,.anim .uline.rv{opacity:1;transform:scaleX(0);transition:transform 1.4s var(--e)}
+.anim .sep.rv.in,.anim .uline.rv.in{transform:scaleX(1)}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.4s}
+@keyframes bikeIn{0%{transform:translateX(120cqw) skewX(10deg);filter:blur(12px);opacity:0}35%{opacity:1}68%{transform:translateX(-3%) skewX(-3deg);filter:blur(0)}84%{transform:translateX(1.2%) skewX(1deg)}100%{transform:none;filter:none}}
+@keyframes shine{0%{transform:translateX(0) skewX(-18deg)}35%,100%{transform:translateX(700%) skewX(-18deg)}}
+@keyframes brk{from{stroke-dashoffset:100}to{stroke-dashoffset:0}}
+@keyframes gline{from{stroke-dashoffset:600}to{stroke-dashoffset:0}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,95,31,.6)}70%{box-shadow:0 0 0 18px rgba(255,95,31,0)}100%{box-shadow:0 0 0 0 rgba(255,95,31,0)}}
+@keyframes sl{0%{transform:translateY(-16px)}100%{transform:translateY(48px)}}
+@keyframes ping{0%{transform:scale(.4);opacity:1}100%{transform:scale(1.6);opacity:0}}
+@container (max-width:1000px){.sec-head{grid-template-columns:auto minmax(0,1fr)}.sec-sub{grid-column:1 / -1}.prow{grid-template-columns:70px minmax(0,1fr) minmax(0,1fr)}.prow-ic{display:none}}
+@container (max-width:760px){
+.wrap{padding:0 20px}
+.nav{display:none}
+.lang{margin-left:auto}
+.hdr-in{height:64px}
+.hero{padding:28px 0 100px}
+.h1{font-size:78px}
+.hero-grid{grid-template-columns:minmax(0,1fr);gap:0}
+.hero-bike{order:-1;margin:8px -10px 0}
+.g1{top:30%}
+.lead{font-size:17px;margin-top:18px}
+.ctas .btn-wa,.ctas .btn-line{flex:1 1 100%;justify-content:center}
+.scroll{right:20px;bottom:28px}
+.spec-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.spec{padding:24px 20px}
+.num{font-size:52px}
+.sec{padding:84px 0}
+.sec-head{grid-template-columns:minmax(0,1fr);gap:16px;margin-bottom:36px}
+.sec-num{font-size:104px}
+.h2{font-size:46px}
+.cards{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin:0 -20px;padding:4px 20px 22px;scrollbar-width:none}
+.card{flex:0 0 84%;scroll-snap-align:center}
+.swipe{display:block}
+.prow{grid-template-columns:48px minmax(0,1fr);gap:6px 14px;padding:24px 0}
+.prow-n{font-size:30px}
+.prow-t{font-size:30px}
+.prow-p{grid-column:2}
+.svc,.visit{grid-template-columns:minmax(0,1fr)}
+.svc-list li{font-size:18px;gap:16px}
+.part{padding:26px 22px}
+.part h3{font-size:34px}
+.map{min-height:300px}
+.ftr{padding:56px 0 110px}
+}
+@media (hover:none){.card:active .card-in{transform:scale(1.025)}}
+@media (prefers-reduced-motion:reduce){.site *,.site *::before,.site *::after{animation:none!important;transition:none!important}.anim .rv,.anim .sep.rv,.anim .uline.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<template id="dc-tpl">
+<div id="vb" class="site anim" style="width:100%">
+<div class="cq">
+
+<header class="hdr light">
+<div class="wrap hdr-in">
+<a href="#top" class="logo" aria-label="Coastline Moto Watamu, home">
+<span class="logo-m" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M2 14c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2"></path><path d="M2 19c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2"></path><circle cx="16" cy="6" r="2.5"></circle></svg></span>
+<span class="logo-t"><span class="logo-w">COASTLINE</span><span class="logo-s">MOTO · WATAMU</span></span>
+</a>
+<nav class="nav" aria-label="Main">
+<a href="#models"><small>01</small>{{t.navModels}}</a>
+<a href="#pay"><small>02</small>{{t.navPay}}</a>
+<a href="#service"><small>03</small>{{t.navService}}</a>
+<a href="#visit"><small>04</small>{{t.navVisit}}</a>
+</nav>
+<div class="lang" role="group" aria-label="Language">
+<button type="button" class="{{enCls}}" aria-pressed="{{isEn}}" onClick="{{setEn}}">EN</button>
+<button type="button" class="{{swCls}}" aria-pressed="{{isSw}}" onClick="{{setSw}}">SW</button>
+</div>
+</div>
+</header>
+
+<section class="hero dark" id="top" onMouseMove="{{par}}" onMouseLeave="{{unpar}}">
+<div class="hero-bg" aria-hidden="true">
+<span class="ghost g1">250</span>
+<span class="ghost g2">WATAMU</span>
+</div>
+<div class="wrap">
+<p class="eyebrow cond rv">{{t.eyebrow}}</p>
+<h1 class="h1 disp rv d1"><span>{{t.h1a}}</span><span class="or">{{t.h1b}}</span></h1>
+<div class="hero-grid">
+<div class="hero-copy">
+<p class="lead mute rv d2">{{t.lead}}</p>
+<div class="ctas rv d3">
+<a class="btn-wa pulse" href="{{waHero}}" target="_blank" rel="noopener">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.6-5.2A8.5 8.5 0 1 1 21 11.5z"></path><path d="M9 9.5c.3 2.4 2.1 4.2 4.5 4.6"></path></svg>
+{{t.ask}}</a>
+<a class="btn-line" href="#models">{{t.see}}</a>
+</div>
+<div class="hero-model rv d4">
+<span class="cond mute">Dune 250 Trail</span>
+<span class="disp"><span class="cond or" style="font-size: 13px; margin-right: 8px">{{t.from}} KES</span>398,000</span>
+</div>
+</div>
+<div class="hero-bike">
+<svg class="hud" viewBox="0 0 600 340" aria-hidden="true">
+<path class="brk" d="M10 60 V10 H60" fill="none" stroke="#ff5f1f" stroke-width="2.5"></path>
+<path class="brk" d="M540 10 H590 V60" fill="none" stroke="#ff5f1f" stroke-width="2.5"></path>
+<path class="brk" d="M590 290 V340 H540" fill="none" stroke="#ff5f1f" stroke-width="2.5"></path>
+<path class="brk" d="M60 340 H10 V290" fill="none" stroke="#ff5f1f" stroke-width="2.5"></path>
+<line class="gline" x1="0" y1="336" x2="600" y2="336" stroke="rgba(255,255,255,.35)" stroke-width="1.5"></line>
+</svg>
+<div class="bike-wrap">
+<img class="bike-img" src="img/f0e79dfd1ef7f020102479a9029292f8.webp" alt="Dune 250 Trail motorcycle, side view" width="1536" height="1024" decoding="async">
+<span class="shine" aria-hidden="true"></span>
+</div>
+</div>
+</div>
+</div>
+<a href="#specs" class="scroll cond">{{t.scroll}}<span class="sl" aria-hidden="true"></span></a>
+</section>
+
+<section class="specs" id="specs" aria-label="Dune 250 Trail specifications">
+<div class="wrap">
+<div class="spec-grid" data-count="1">
+<sc-for list="{{specs}}" as="s" hint-placeholder-count="4">
+<div class="spec rv {{s.d}}">
+<p class="spec-v"><span class="num">{{s.shown}}</span><span class="unit">{{s.unit}}</span></p>
+<p class="spec-l">{{s.label}}</p>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section class="sec light" id="models">
+<div class="wrap">
+<div class="sec-head">
+<span class="sec-num rv" aria-hidden="true">01</span>
+<div>
+<p class="kicker cond rv">{{t.modelsK}}</p>
+<h2 class="h2 disp rv d1">{{t.modelsH}}</h2>
+<span class="uline rv d2" aria-hidden="true"></span>
+</div>
+<p class="sec-sub mute rv d3">{{t.modelsP}}</p>
+</div>
+<div class="cards">
+<sc-for list="{{models}}" as="m" hint-placeholder-count="6">
+<article class="card rv {{m.d}}" onMouseMove="{{m.tilt}}" onMouseLeave="{{m.untilt}}">
+<div class="card-in">
+<div class="card-img">
+<span class="card-tag cond">{{m.tag}}</span>
+<img class="card-photo {{m.flip}}" src="{{m.img}}" alt="{{m.name}} motorcycle" width="1536" height="1024" loading="lazy" decoding="async">
+</div>
+<div class="card-body">
+<h3 class="card-name disp">{{m.name}}</h3>
+<p class="card-meta mute">{{m.meta}}</p>
+<div class="card-foot">
+<p class="price"><span>KES</span>{{m.price}}</p>
+<a class="btn-wa sm" href="{{m.wa}}" target="_blank" rel="noopener">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.6-5.2A8.5 8.5 0 1 1 21 11.5z"></path><path d="M9 9.5c.3 2.4 2.1 4.2 4.5 4.6"></path></svg>
+{{m.ask}}</a>
+</div>
+</div>
+</div>
+</article>
+</sc-for>
+</div>
+<p class="swipe cond">{{t.swipe}} →</p>
+</div>
+</section>
+
+<section class="sec inkbg" id="pay">
+<div class="sep rv" aria-hidden="true"></div>
+<div class="wrap">
+<div class="sec-head">
+<span class="sec-num rv" aria-hidden="true">02</span>
+<div>
+<p class="kicker cond rv">{{t.payK}}</p>
+<h2 class="h2 disp rv d1">{{t.payH}}</h2>
+<span class="uline rv d2" aria-hidden="true"></span>
+</div>
+<p class="sec-sub mute rv d3">{{t.payP}}</p>
+</div>
+<div class="plist">
+<div class="prow rv">
+<span class="prow-n" aria-hidden="true">A</span>
+<h3 class="prow-t disp">{{t.cash}}</h3>
+<p class="prow-p mute">{{t.cashP}}</p>
+<span class="prow-ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="2"></rect><circle cx="12" cy="12" r="2.5"></circle><path d="M6 9.5v5M18 9.5v5"></path></svg></span>
+</div>
+<div class="prow hot rv d1">
+<span class="prow-n" aria-hidden="true">B</span>
+<h3 class="prow-t disp">M-Pesa</h3>
+<p class="prow-p mute">{{t.mpesaP}}</p>
+<span class="prow-ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"></rect><path d="M10.5 18h3"></path><path d="M9.5 9.5l2 2 3.5-3.5"></path></svg></span>
+</div>
+<div class="prow rv d2">
+<span class="prow-n" aria-hidden="true">C</span>
+<h3 class="prow-t disp">{{t.inst}}</h3>
+<p class="prow-p mute">{{t.instP}}</p>
+<span class="prow-ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path><path d="M8 15h2M12 15h2"></path></svg></span>
+</div>
+<div class="prow rv d3">
+<span class="prow-n" aria-hidden="true">D</span>
+<h3 class="prow-t disp">{{t.fin}}</h3>
+<p class="prow-p mute">{{t.finP}}</p>
+<span class="prow-ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6"></path><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8"></path><path d="M3 21h18"></path></svg></span>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec light" id="service">
+<div class="wrap">
+<div class="sec-head">
+<span class="sec-num rv" aria-hidden="true">03</span>
+<div>
+<p class="kicker cond rv">{{t.svcK}}</p>
+<h2 class="h2 disp rv d1">{{t.svcH}}</h2>
+<span class="uline rv d2" aria-hidden="true"></span>
+</div>
+<p class="sec-sub mute rv d3">{{t.svcP}}</p>
+</div>
+<div class="svc">
+<ul class="svc-list">
+<li class="rv"><span class="svc-n">01</span>{{t.svc1}}</li>
+<li class="rv d1"><span class="svc-n">02</span>{{t.svc2}}</li>
+<li class="rv d2"><span class="svc-n">03</span>{{t.svc3}}</li>
+<li class="rv d3"><span class="svc-n">04</span>{{t.svc4}}</li>
+</ul>
+<div class="svc-side">
+<div class="shop rv"><span class="cond">{{t.photoW}}</span></div>
+<div class="part rv d1">
+<h3 class="disp">{{t.partH}}</h3>
+<p>{{t.partP}}</p>
+<a class="btn-wa" href="{{waPart}}" target="_blank" rel="noopener">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.6-5.2A8.5 8.5 0 1 1 21 11.5z"></path><path d="M9 9.5c.3 2.4 2.1 4.2 4.5 4.6"></path></svg>
+{{t.partB}}</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec dark" id="visit">
+<div class="sep rv" aria-hidden="true"></div>
+<div class="wrap">
+<div class="sec-head">
+<span class="sec-num rv" aria-hidden="true">04</span>
+<div>
+<p class="kicker cond rv">{{t.visitK}}</p>
+<h2 class="h2 disp rv d1">{{t.visitH}}</h2>
+<span class="uline rv d2" aria-hidden="true"></span>
+</div>
+<p class="sec-sub mute rv d3">{{t.visitP}}</p>
+</div>
+<div class="visit">
+<div class="map rv">
+<svg viewBox="0 0 700 420" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Map placeholder: Coastline Moto on Watamu Road, Watamu">
+<rect width="700" height="420" fill="#f2f0eb"></rect>
+<path d="M540 0 C515 90 575 150 550 220 C532 280 590 340 610 420 L700 420 L700 0 Z" fill="#d9d5cb"></path>
+<path d="M0 84H700M0 168H700M0 252H700M0 336H700M84 0V420M168 0V420M252 0V420M336 0V420M420 0V420M504 0V420" stroke="rgba(17,17,17,.06)" stroke-width="1"></path>
+<path d="M60 420 C160 330 300 250 470 200 C520 186 560 150 600 120" fill="none" stroke="#ffffff" stroke-width="12"></path>
+<path d="M60 420 C160 330 300 250 470 200 C520 186 560 150 600 120" fill="none" stroke="rgba(17,17,17,.18)" stroke-width="1"></path>
+<path d="M260 0 C280 100 330 180 360 240" fill="none" stroke="#ffffff" stroke-width="7"></path>
+<text x="150" y="330" fill="rgba(17,17,17,.6)" font-size="12" letter-spacing="2" transform="rotate(-33 150 330)">WATAMU ROAD</text>
+<text x="640" y="40" fill="#b83c0b" font-size="12" letter-spacing="4" transform="rotate(90 640 40)">INDIAN OCEAN</text>
+<g transform="translate(420 214)">
+<circle class="ping" r="28" fill="rgba(255,95,31,.25)"></circle>
+<circle r="9" fill="#ff5f1f"></circle>
+<circle r="3.5" fill="#111111"></circle>
+</g>
+<text x="402" y="246" fill="#111111" font-size="13" font-weight="700" letter-spacing="2" text-anchor="end">COASTLINE MOTO</text>
+</svg>
+<span class="map-note cond">{{t.mapNote}}</span>
+</div>
+<div class="info rv d1">
+<div class="info-row"><p class="info-l cond">{{t.addrL}}</p><p class="info-v">Watamu Road, Watamu
+Kilifi County, Kenya</p></div>
+<div class="info-row"><p class="info-l cond">{{t.hoursL}}</p><p class="info-v">{{t.hours}}</p></div>
+<div class="info-row"><p class="info-l cond">{{t.phoneL}}</p><p class="info-v">+254 7XX XXX XXX
+ride@coastlinemoto.co.ke</p></div>
+<div class="ctas">
+<a class="btn-wa" href="{{waGen}}" target="_blank" rel="noopener">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.6-5.2A8.5 8.5 0 1 1 21 11.5z"></path><path d="M9 9.5c.3 2.4 2.1 4.2 4.5 4.6"></path></svg>
+WhatsApp</a>
+<a class="btn-line" href="https://maps.google.com/?q=Watamu+Road+Watamu" target="_blank" rel="noopener">{{t.dir}}</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="ftr inkbg">
+<div class="wrap">
+<span class="ftr-big" aria-hidden="true">COASTLINE</span>
+<div class="ftr-in mute">
+<span>© 2026 Coastline Moto Watamu · {{t.rights}}</span>
+<span>{{t.demo}}</span>
+</div>
+</div>
+</footer>
+
+</div>
+<a class="fab pulse" href="{{waGen}}" target="_blank" rel="noopener" aria-label="{{t.ask}}">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.6-5.2A8.5 8.5 0 1 1 21 11.5z"></path><path d="M9 9.5c.3 2.4 2.1 4.2 4.5 4.6"></path></svg>
+</a>
+</div>
+</template>
+<script>
+/* Runtime minimo per le demo DEC'S esportate dal canvas: {{binding}}, <sc-for>, on*="{{handler}}". */
+(function () {
+  function get(ctx, path) {
+    return path.split('.').reduce(function (o, k) { return o == null ? o : o[k]; }, ctx);
+  }
+  var RX = /\{\{\s*([\w.$]+)\s*\}\}/g;
+  function interp(tpl, ctx) {
+    return tpl.replace(RX, function (_, p) { var v = get(ctx, p); return v == null ? '' : String(v); });
+  }
+  window.DCLogic = function DCLogic(props) { this.props = props || {}; this.state = {}; };
+  window.DCLogic.prototype.setState = function (patch) {
+    Object.assign(this.state, typeof patch === 'function' ? patch(this.state) : patch);
+    if (this._update) this._update();
+  };
+
+  function bind(node, ctxFn, out) {
+    if (node.nodeType === 3) {
+      if (RX.test(node.nodeValue)) { RX.lastIndex = 0; out.push({ k: 't', n: node, tpl: node.nodeValue, c: ctxFn }); }
+      RX.lastIndex = 0;
+      return;
+    }
+    if (node.nodeType !== 1) return;
+    if (node.tagName === 'SC-FOR') {
+      var m = /\{\{\s*([\w.$]+)\s*\}\}/.exec(node.getAttribute('list') || '');
+      var as = node.getAttribute('as') || 'item';
+      var list = (m && get(ctxFn(), m[1])) || [];
+      var parent = node.parentNode;
+      list.forEach(function (_, i) {
+        var itemCtx = function () { var c = Object.create(ctxFn()); c[as] = (get(ctxFn(), m[1]) || [])[i]; return c; };
+        Array.prototype.slice.call(node.childNodes).forEach(function (ch) {
+          var cl = ch.cloneNode(true);
+          parent.insertBefore(cl, node);
+          bind(cl, itemCtx, out);
+        });
+      });
+      parent.removeChild(node);
+      return;
+    }
+    Array.prototype.slice.call(node.attributes).forEach(function (a) {
+      if (a.value.indexOf('{{') < 0) return;
+      var ev = /^on(.+)$/i.exec(a.name), only = /^\s*\{\{\s*([\w.$]+)\s*\}\}\s*$/.exec(a.value);
+      if (ev && only) {
+        node.removeAttribute(a.name);
+        node.addEventListener(ev[1].toLowerCase(), function (e) { var f = get(ctxFn(), only[1]); if (typeof f === 'function') f(e); });
+      } else {
+        out.push({ k: 'a', n: node, name: a.name, tpl: a.value, c: ctxFn });
+      }
+    });
+    Array.prototype.slice.call(node.childNodes).forEach(function (ch) { bind(ch, ctxFn, out); });
+  }
+
+  window.dcMount = function (Component) {
+    var comp = new Component({});
+    var vals = comp.renderVals();
+    var rootCtx = function () { return vals; };
+    var tpl = document.getElementById('dc-tpl');
+    var frag = tpl.content.cloneNode(true);
+    var holder = document.createElement('div');
+    holder.appendChild(frag);
+    var bindings = [];
+    bind(holder, rootCtx, bindings);
+    function apply() {
+      bindings.forEach(function (b) {
+        var v = interp(b.tpl, b.c());
+        if (b.k === 't') { if (b.n.nodeValue !== v) b.n.nodeValue = v; }
+        else if (b.n.getAttribute(b.name) !== v) b.n.setAttribute(b.name, v);
+      });
+      if (comp.state && comp.state.lang) document.documentElement.lang = comp.state.lang;
+    }
+    apply();
+    while (holder.firstChild) document.body.insertBefore(holder.firstChild, tpl);
+    comp._update = function () { vals = comp.renderVals(); apply(); };
+    tpl.parentNode.removeChild(tpl);
+    if (comp.componentDidMount) comp.componentDidMount();
+  };
+})();
+
+</script>
+<script>
+var WA = 'https://wa.me/254700000000?text=';
+var IMGS = [
+  { src: 'img/4a6c5e83dea1cff57ad8c695787c0657.webp', flip: 'flip' },
+  { src: 'img/2c22cc0708187816d5c01e8589031f92.webp', flip: 'flip' },
+  { src: 'img/4a6c5e83dea1cff57ad8c695787c0657.webp', flip: '' },
+  { src: 'img/2c22cc0708187816d5c01e8589031f92.webp', flip: '' },
+  { src: 'img/1fcd4805c03e9ee70aafa38e5b65ed6a.webp', flip: '' },
+  { src: 'img/618536353d0d2314477c128e3e47c53e.webp', flip: '' }
+];
+var T = {
+  en: {
+    navModels: 'Lineup', navPay: 'Payments', navService: 'Service', navVisit: 'Find us',
+    eyebrow: 'New season · Watamu',
+    h1a: 'Ride', h1b: 'the coast',
+    lead: 'Bikes, parts and service for Watamu, Gede and Kilifi. Book your test ride on WhatsApp.',
+    ask: 'Ask on WhatsApp', see: 'View the lineup', scroll: 'Scroll', from: 'From',
+    modelsK: 'The lineup', modelsH: 'Six bikes. One coast.', modelsP: 'Prices in KES. Message us for the on-the-road price and the colours in stock.',
+    swipe: 'Swipe for more', photo: 'Dealer photo',
+    payK: 'Payments', payH: 'Pay the way you want', payP: 'Four simple ways to own your bike. We help you with the paperwork.',
+    cash: 'Cash', cashP: 'Pay at the showroom, sign, and ride out the same day.',
+    mpesaP: 'Lipa na M-Pesa. Paybill [NUMBER], account: your name.',
+    inst: 'Installments', instP: 'Pay a deposit today, then weekly or monthly. Made for boda riders.',
+    fin: 'Financing', finP: 'With partner banks and SACCOs. Bring your ID, KRA PIN and payslip or M-Pesa statement.',
+    svcK: 'Parts & service', svcH: 'We keep you riding', svcP: 'A full workshop behind the showroom. Any bike, any brand.',
+    svc1: 'Original and quality parts in stock', svc2: 'Full service and repairs', svc3: 'Same-day fast lane for boda riders', svc4: 'Tyres, chains, batteries, helmets',
+    photoW: 'Workshop photo',
+    partH: 'Need a part?', partP: 'Send the bike model and a photo of the part. We reply with price and stock.', partB: 'Ask for a part',
+    visitK: 'Find us', visitH: 'Come for a test ride', visitP: 'On Watamu Road, with easy parking in front of the showroom.',
+    addrL: 'Address', hoursL: 'Opening hours', hours: 'Mon–Sat   8:30 – 18:00\nSunday   10:00 – 14:00', phoneL: 'Phone & email',
+    dir: 'Get directions', mapNote: 'Google Maps goes here',
+    rights: 'All rights reserved', demo: 'Demo site by DEC’S',
+    waHello: 'Hello Coastline Moto, I am interested in the ', waPart: 'Hello Coastline Moto, I need a spare part for my bike.', waGen: 'Hello Coastline Moto, I have a question.'
+  },
+  sw: {
+    navModels: 'Pikipiki', navPay: 'Malipo', navService: 'Huduma', navVisit: 'Tupate',
+    eyebrow: 'Msimu mpya · Watamu',
+    h1a: 'Endesha', h1b: 'pwani',
+    lead: 'Pikipiki, vipuri na huduma kwa Watamu, Gede na Kilifi. Panga jaribio lako kwa WhatsApp.',
+    ask: 'Uliza kwa WhatsApp', see: 'Tazama pikipiki', scroll: 'Shuka', from: 'Kuanzia',
+    modelsK: 'Pikipiki zetu', modelsH: 'Pikipiki sita. Pwani moja.', modelsP: 'Bei kwa KES. Tutumie ujumbe kwa bei kamili na rangi zilizopo.',
+    swipe: 'Telezesha uone zaidi', photo: 'Picha ya duka',
+    payK: 'Malipo', payH: 'Lipa unavyopenda', payP: 'Njia nne rahisi za kumiliki pikipiki yako. Tunakusaidia na makaratasi.',
+    cash: 'Pesa taslimu', cashP: 'Lipa dukani, saini, na uondoke na pikipiki siku hiyo hiyo.',
+    mpesaP: 'Lipa na M-Pesa. Paybill [NAMBARI], akaunti: jina lako.',
+    inst: 'Kwa awamu', instP: 'Lipa amana leo, kisha kila wiki au kila mwezi. Kwa waendesha boda.',
+    fin: 'Mkopo', finP: 'Kupitia benki na SACCO washirika. Leta kitambulisho, KRA PIN na payslip au taarifa ya M-Pesa.',
+    svcK: 'Vipuri na huduma', svcH: 'Tunakuweka barabarani', svcP: 'Karakana kamili nyuma ya duka. Pikipiki yoyote, aina yoyote.',
+    svc1: 'Vipuri halisi na bora vipo stoo', svc2: 'Huduma kamili na matengenezo', svc3: 'Huduma ya haraka siku hiyo hiyo kwa waendesha boda', svc4: 'Matairi, minyororo, betri, helmeti',
+    photoW: 'Picha ya karakana',
+    partH: 'Unahitaji kipuri?', partP: 'Tuma aina ya pikipiki na picha ya kipuri. Tutakujibu na bei na upatikanaji.', partB: 'Uliza kipuri',
+    visitK: 'Tupate', visitH: 'Njoo ujaribu pikipiki', visitP: 'Watamu Road, maegesho rahisi mbele ya duka.',
+    addrL: 'Anwani', hoursL: 'Saa za kazi', hours: 'Jumatatu–Jumamosi   8:30 – 18:00\nJumapili   10:00 – 14:00', phoneL: 'Simu na barua pepe',
+    dir: 'Pata maelekezo', mapNote: 'Ramani ya Google itawekwa hapa',
+    rights: 'Haki zote zimehifadhiwa', demo: 'Tovuti ya mfano na DEC’S',
+    waHello: 'Habari Coastline Moto, ninavutiwa na ', waPart: 'Habari Coastline Moto, ninahitaji kipuri cha pikipiki yangu.', waGen: 'Habari Coastline Moto, nina swali.'
+  }
+};
+var SPECS = [
+  { v: 249, u: { en: 'CC', sw: 'CC' }, l: { en: 'Engine', sw: 'Injini' } },
+  { v: 24, u: { en: 'HP', sw: 'HP' }, l: { en: 'Power', sw: 'Nguvu' } },
+  { v: 6, u: { en: 'GEARS', sw: 'GIA' }, l: { en: 'Gearbox', sw: 'Sanduku la gia' } },
+  { v: 32, u: { en: 'KM/L', sw: 'KM/L' }, l: { en: 'Fuel use', sw: 'Matumizi ya mafuta' } }
+];
+var MODELS = [
+  { name: 'Tide 125', tag: { en: 'Commuter', sw: 'Kazi' }, meta: { en: '124 cc · 4-speed · rear rack', sw: '124 cc · gia 4 · kibebeo' }, price: '139,000', body: '#ff5f1f', frame: '#2a2a2a', deco: '#f2f0eb' },
+  { name: 'Reef 150', tag: { en: 'Commuter', sw: 'Kazi' }, meta: { en: '149 cc · 5-speed · low seat', sw: '149 cc · gia 5 · kiti cha chini' }, price: '158,000', body: '#f2f0eb', frame: '#ff5f1f', deco: '#ff5f1f' },
+  { name: 'Dune 250 Trail', tag: { en: 'Trail', sw: 'Njia mbaya' }, meta: { en: '249 cc · 24 hp · 6-speed', sw: '249 cc · 24 hp · gia 6' }, price: '398,000', body: '#ff5f1f', frame: '#ff5f1f', deco: '#111111' },
+  { name: 'Kilifi 200', tag: { en: 'Street', sw: 'Mjini' }, meta: { en: '199 cc · 5-speed · LED lights', sw: '199 cc · gia 5 · taa za LED' }, price: '245,000', body: '#2a2a2a', frame: '#ff5f1f', deco: '#ff5f1f' },
+  { name: 'Mida 110', tag: { en: 'City', sw: 'Mjini' }, meta: { en: '110 cc · automatic · light', sw: '110 cc · otomatiki · nyepesi' }, price: '132,000', body: '#d9d6cf', frame: '#3a3a3a', deco: '#ff5f1f' },
+  { name: 'Sabaki 400', tag: { en: 'Adventure', sw: 'Safari' }, meta: { en: '399 cc · 40 hp · 6-speed', sw: '399 cc · 40 hp · gia 6' }, price: '760,000', body: '#1c1c1c', frame: '#ff5f1f', deco: '#ff5f1f' }
+];
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    var rm = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    this.rm = rm;
+    this.state = { lang: 'en', p: rm ? 1 : 0 };
+    var self = this;
+    this.setEn = function () { self.setState({ lang: 'en' }); };
+    this.setSw = function () { self.setState({ lang: 'sw' }); };
+    this.par = function (e) {
+      if (self.rm) return;
+      var el = e.currentTarget, r = el.getBoundingClientRect();
+      el.style.setProperty('--mx', ((e.clientX - r.left) / r.width - 0.5).toFixed(3));
+      el.style.setProperty('--my', ((e.clientY - r.top) / r.height - 0.5).toFixed(3));
+    };
+    this.unpar = function (e) {
+      e.currentTarget.style.setProperty('--mx', '0');
+      e.currentTarget.style.setProperty('--my', '0');
+    };
+    this.tilt = function (e) {
+      if (self.rm || !window.matchMedia('(hover: hover)').matches) return;
+      var el = e.currentTarget, r = el.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+      el.style.setProperty('--ry', (x * 10).toFixed(2) + 'deg');
+      el.style.setProperty('--rx', (-y * 8).toFixed(2) + 'deg');
+    };
+    this.untilt = function (e) {
+      e.currentTarget.style.setProperty('--ry', '0deg');
+      e.currentTarget.style.setProperty('--rx', '0deg');
+    };
+  }
+  componentDidMount() {
+    var self = this, root = document.getElementById('vb');
+    if (!root) return;
+    if (this.rm || !('IntersectionObserver' in window)) { root.classList.remove('anim'); this.setState({ p: 1 }); return; }
+    this.io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        en.target.classList.add('in');
+        self.io.unobserve(en.target);
+        if (en.target.hasAttribute('data-count')) self.count();
+      });
+    }, { threshold: 0.15 });
+    root.querySelectorAll('.rv, [data-count]').forEach(function (el) { self.io.observe(el); });
+    this.onScroll = function () { root.style.setProperty('--sy', String(Math.round(window.scrollY || 0))); };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.fallback = setTimeout(function () { self.count(); }, 4000);
+  }
+  componentWillUnmount() {
+    if (this.io) this.io.disconnect();
+    if (this.onScroll) window.removeEventListener('scroll', this.onScroll);
+    clearTimeout(this.fallback);
+    cancelAnimationFrame(this.raf);
+  }
+  count() {
+    if (this.started) return;
+    this.started = true;
+    var self = this, t0 = performance.now();
+    function step(t) {
+      var k = Math.min(1, (t - t0) / 1400);
+      self.setState({ p: 1 - Math.pow(1 - k, 3) });
+      if (k < 1) self.raf = requestAnimationFrame(step);
+    }
+    this.raf = requestAnimationFrame(step);
+  }
+  renderVals() {
+    var L = this.state.lang, t = T[L], p = this.state.p, self = this;
+    var wa = function (txt) { return WA + encodeURIComponent(txt); };
+    return {
+      t: t,
+      isEn: L === 'en', isSw: L === 'sw',
+      enCls: L === 'en' ? 'on' : '', swCls: L === 'sw' ? 'on' : '',
+      setEn: this.setEn, setSw: this.setSw, par: this.par, unpar: this.unpar,
+      waHero: wa(t.waHello + 'Dune 250 Trail.'), waPart: wa(t.waPart), waGen: wa(t.waGen),
+      specs: SPECS.map(function (s, i) {
+        return { shown: Math.round(s.v * p), unit: s.u[L], label: s.l[L], d: 'd' + i };
+      }),
+      models: MODELS.map(function (m, i) {
+        return {
+          name: m.name, tag: m.tag[L], meta: m.meta[L], price: m.price, img: IMGS[i].src, flip: IMGS[i].flip,
+          photo: t.photo, ask: t.ask, d: 'd' + (i % 3),
+          wa: wa(t.waHello + m.name + '.'),
+          tilt: self.tilt, untilt: self.untilt
+        };
+      })
+    };
+  }
+}
+dcMount(Component);
+</script>
+</body>
+</html>
