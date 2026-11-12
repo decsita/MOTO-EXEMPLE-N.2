@@ -18,10 +18,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--or);outline-offset:
 .hdr{position:relative;z-index:5}
 .hdr-in{display:flex;align-items:center;gap:36px;height:80px}
 .logo{display:flex;align-items:center;gap:12px;min-height:44px}
-.logo-m{width:38px;height:38px;background:var(--or);color:var(--ink);display:flex;align-items:center;justify-content:center}
-.logo-t{display:flex;flex-direction:column;gap:2px;line-height:1}
-.logo-w{font-family:'Unbounded',system-ui,sans-serif;font-size:22px;letter-spacing:.02em}
-.logo-s{font-family:'Manrope',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.28em;color:var(--ort)}
+.logo-m{flex:none}
+.logo-w{font-family:'Unbounded',system-ui,sans-serif;font-weight:600;font-size:19px;letter-spacing:.08em;text-transform:uppercase}
 .nav{display:flex;gap:30px;margin-left:auto}
 .nav a{display:flex;align-items:center;padding:12px 0;font-family:'Manrope',system-ui,sans-serif;font-weight:700;font-size:15px;letter-spacing:.14em;text-transform:uppercase;position:relative}
 .nav a::after{content:'';position:absolute;left:0;right:0;bottom:6px;height:2px;background:var(--or);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--e)}
