@@ -34,9 +34,13 @@ img{max-width:100%}
 .nav a:hover{color:var(--tx)}
 .nav a::after{content:'';position:absolute;left:0;right:0;bottom:8px;height:2px;background:var(--or);box-shadow:0 0 12px var(--glow);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--e)}
 .nav a:hover::after{transform:scaleX(1)}
-.lang{display:flex;border:1px solid var(--line2);border-radius:99px;padding:3px}
-.lang button{appearance:none;border:0;background:none;cursor:pointer;font:800 13px/1 var(--fb);letter-spacing:.14em;height:38px;min-width:44px;padding:0 12px;border-radius:99px;color:var(--mu);transition:background .3s,color .3s}
-.lang button.on{background:var(--tx);color:var(--bg)}
+/* Selettore lingua: una capsula con un cursore luminoso che scorre sotto la lingua attiva */
+.lang{position:relative;display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line2);border-radius:99px;padding:2px;background:rgba(10,10,11,.5)}
+.lang::before{content:'';position:absolute;top:2px;bottom:2px;left:2px;width:calc(50% - 2px);border-radius:99px;background:var(--or);box-shadow:0 0 18px var(--glow);transition:transform .5s var(--e)}
+html[lang="sw"] .lang::before{transform:translateX(100%)}
+.lang button{position:relative;appearance:none;border:0;background:none;cursor:pointer;font:800 12px/1 var(--fb);letter-spacing:.16em;height:44px;min-width:48px;padding:0 0 0 .16em;border-radius:99px;color:var(--mu);transition:color .4s}
+.lang button:hover{color:var(--tx)}
+.lang button.on{color:var(--bg)}
 .menu-btn{display:none}
 
 /* ---------- Hero ---------- */
