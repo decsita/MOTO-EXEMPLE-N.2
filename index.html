@@ -10,7 +10,18 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Barlow:wght@400;500;600;700&amp;family=Barlow+Condensed:wght@600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<script>document.documentElement.classList.add('js')</script>
+<script>
+/* Lingua prima del primo disegno: ?lang= nell'indirizzo, poi quella salvata, poi inglese */
+(function (d) {
+  d.classList.add('js');
+  var l = new URLSearchParams(location.search).get('lang');
+  try { l = l || localStorage.getItem('lang'); } catch (e) {}
+  if (l !== 'sw') return;
+  d.lang = 'sw';
+  d.classList.add('i18n-wait'); /* nasconde i testi inglesi finché arrivano quelli swahili */
+  setTimeout(function () { d.classList.remove('i18n-wait'); }, 3000);
+})(document.documentElement);
+</script>
 <script src="js/main.js" defer></script>
 </head>
 <body>

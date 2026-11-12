@@ -3,14 +3,23 @@ const root = document.documentElement;
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ---------- Lingua: i testi stanno in i18n/en.json e i18n/sw.json ---------- */
-async function setLang(lang) {
+async function setLang(lang, chosen) {
   let t;
   try {
     t = await (await fetch(`i18n/${lang}.json`)).json();
   } catch {
+    root.classList.remove('i18n-wait');
     return; // senza rete restano i testi inglesi scritti nell'HTML
   }
   root.lang = lang;
+  root.classList.remove('i18n-wait');
+  // L'indirizzo segue la lingua (?lang=sw); la scelta fatta dal visitatore resta salvata
+  const url = new URL(location.href);
+  if (chosen || lang !== 'en' || url.searchParams.has('lang')) {
+    url.searchParams.set('lang', lang);
+    history.replaceState(null, '', url);
+  }
+  if (chosen) try { localStorage.setItem('lang', lang); } catch {}
   document.querySelectorAll('[data-i18n]').forEach(el => {
     if (t[el.dataset.i18n] != null) el.textContent = t[el.dataset.i18n];
   });
@@ -29,9 +38,9 @@ async function setLang(lang) {
   });
 }
 document.querySelectorAll('[data-lang]').forEach(b => {
-  b.addEventListener('click', () => setLang(b.dataset.lang));
+  b.addEventListener('click', () => setLang(b.dataset.lang, true));
 });
-setLang('en');
+setLang(root.lang === 'sw' ? 'sw' : 'en'); // la lingua iniziale la decide lo script nell'<head>
 
 /* ---------- Comparsa delle sezioni e contatori dei dati tecnici ---------- */
 function countUp(el) {

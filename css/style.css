@@ -186,3 +186,4 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--or);outline-offset:
 }
 @media (hover:none){.card:active .card-in{transform:scale(1.025)}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.js .rv,.js .sep.rv,.js .uline.rv{opacity:1;transform:none}}
+.i18n-wait body{visibility:hidden}
